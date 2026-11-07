@@ -8,6 +8,7 @@ def get_location(ip) :
         return response.json()
     
 if __name__ == '__main__':
-    print(get_location('38.76.163.36'))
+   # print(get_location('38.76.163.36'))
+    print(get_location('38.76.163.40'))
 
     
