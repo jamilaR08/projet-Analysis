@@ -55,7 +55,7 @@ def main() -> None:
     figure, axes = plt.subplots(3, 1, figsize=(12, 13), constrained_layout=True)
 
     event_items = summary["events"].most_common()
-    axes[0].bar([item[0] for item in event_items], [item[1] for item in event_items], color="#4472C4")
+    axes[0].bar([item[0] for item in event_items], [item[1] for item in event_items], color="#27C482")
     axes[0].set_title("Événements détectés")
     axes[0].set_ylabel("Nombre de lignes")
     axes[0].tick_params(axis="x", rotation=25)
@@ -64,7 +64,7 @@ def main() -> None:
         summary["days"].items(),
         key=lambda item: (item[0].split()[0], int(item[0].split()[1])),
     )
-    axes[1].plot([item[0] for item in day_items], [item[1] for item in day_items], marker="o", color="#ED7D31")
+    axes[1].plot([item[0] for item in day_items], [item[1] for item in day_items], marker="o", color="#AFDB10")
     axes[1].set_title("Volume des logs par jour")
     axes[1].set_ylabel("Nombre de lignes")
     axes[1].tick_params(axis="x", rotation=45)
@@ -72,7 +72,7 @@ def main() -> None:
     ip_items = summary["ips"].most_common(10)
     if ip_items:
         ip_items.reverse()
-        axes[2].barh([item[0] for item in ip_items], [item[1] for item in ip_items], color="#70AD47")
+        axes[2].barh([item[0] for item in ip_items], [item[1] for item in ip_items], color="#DA482E")
         axes[2].set_title("10 adresses IP les plus fréquentes")
         axes[2].set_xlabel("Nombre d'occurrences")
     else:
